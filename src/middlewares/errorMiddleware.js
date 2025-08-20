@@ -1,10 +1,10 @@
 function error (error, req, res, next) {
-    if (error.name === "CastError") return res.status(400).json({ message: "Bad Request", status: 400 });
+    if (error.name === "CastError") return res.status(400).json({ message: "Bad Request"});
     else if (error.name === "ValidationError") {
-        const messageError = Object.keys(error.errors).map((error) => `${error} is required`);
-        return res.status(400).json({ message: messageError, status: 400 });
+        const messageError = Object.values(error.errors).map((error) => error.message);
+        return res.status(400).json({ message: messageError});
     } 
-    else if (error === 404) return res.status(404).json({ message: "Mission not found", status: 404 });
+    else if (error === 404) return res.status(404).json({ message: "Mission not found"});
     else next(error);
 };
 
