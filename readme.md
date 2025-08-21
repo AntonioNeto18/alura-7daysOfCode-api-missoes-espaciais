@@ -46,8 +46,7 @@ Foi desenvolvida como parte do curso **7 Days of Code - Node.js com Express** da
 ### Executando a Aplicação
 
 Para iniciar o servidor com recarga automática ao alterar arquivos (usando `nodemon`):
-
-    ```sh
+    ```
     npm run dev
     ```
 A API estará disponível em http://localhost:3000.
